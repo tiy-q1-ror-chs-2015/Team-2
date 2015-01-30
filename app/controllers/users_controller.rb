@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = user.find params
+    @users = User.all
   end
 
   def show

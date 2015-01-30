@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-
+  
   # Example of regular route:
   get 'discover' => 'discover#index'
   post 'discover_create_post' => 'discover#create_post'
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :discover
+  #   resources :products
+  resources :users
 
   # Example resource route with options:
   #   resources :products do
