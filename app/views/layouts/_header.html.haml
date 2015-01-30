@@ -1,7 +1,10 @@
 %header
-  %h1= link_to "fumbler", root_path
-  - if user_signed_in?
-    = link_to "logout", destroy_user_session_path, method: :delete
-  - else
-    = link_to "signup", new_user_registration_path
-    = link_to "login", new_user_session_path
+	.row
+		%div{:class => ['row', 'medium-5-centered column']} 
+			%ul{:class => ['medium-block-grid-3']}
+				= link_to "Fumblr", root_path
+				- if user_signed_in?
+					= link_to "logout", destroy_user_session_path, method: :delete
+				- else
+					= link_to "signup", new_user_registration_path
+					= link_to "login", new_user_session_path
