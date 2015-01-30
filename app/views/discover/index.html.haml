@@ -1,0 +1,18 @@
+/ TODO: fix form_for nil class error
+
+-if user_signed_in?
+  %h3 Enter a New Post here!
+  = form_for @post, url: discover_create_post_path do |f|
+    = f.label :Content
+    = f.text_field :content
+    = f.submit 
+
+%h3 All Fumblr Posts
+%br
+
+- @posts.each do |p|
+  %strong Post Id:
+  %a= p.id
+  %br
+  %strong Content
+  %a= p.content
