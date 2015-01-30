@@ -34,6 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use devise for user authentication
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -46,5 +49,8 @@ group :development, :test do
 
   # Use fake to generate some fake data
   gem 'faker'
-end
 
+  # Use html2haml to convert html2haml
+  gem 'html2haml'
+
+end
