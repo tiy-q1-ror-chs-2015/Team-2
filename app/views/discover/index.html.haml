@@ -1,0 +1,9 @@
+%h3 All Fumblr Posts
+%br
+
+  - @posts.each do |p|
+    %strong Post Id:
+    %a= p.id
+    %br
+    %strong Content
+    %a= p.content
