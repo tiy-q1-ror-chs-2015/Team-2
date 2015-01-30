@@ -1,55 +1,55 @@
-class discoverController < ApplicationController
+class PostController < ApplicationController
 	def index
-		@discover = Discover.all
+		@post = Post.all
 	end
 
 	def new
-		@discover = Discover.all
+		@post = Post.all
 	end
 
 	def create
-		@Discover = Discover.create Discover_params
+		@post = Post.create post_params
 	end
 
 	def edit
-		@Discover = Discover.find params[:id]
+		@post = Post.find params[:id]
 	end
 
 	def show
-		@Discover = Discover.find params[:id]
+		@post = Post.find params[:id]
 	end
 
 	def create
-		@Discover = Discover.new(Discover_params)
-			if @Discover.save
-				flash[:notice] = "Discover has been successfully saved"
-				redirect_to hDiscover_path
+		@post = Post.new(post_params)
+			if @post.save
+				flash[:notice] = "post has been successfully saved"
+				redirect_to hpost_path
 			else
-				flash[:error] = "Discover was not saved"
+				flash[:error] = "post was not saved"
 			end
 	end
 
 	def update
-		@Discover = Discover.find params[:id]
-		@Discover.update(Discover_params)
-			if @Discover.save
-    	flash[:notice] = 'Discover data was successfully created.'
-    	redirect_to Discover_path
+		@post = Post.find params[:id]
+		@post.update(post_params)
+			if @post.save
+    	flash[:notice] = 'post data was successfully created.'
+    	redirect_to post_path
     else
-    	flash[:error] = "Discover data was NOT saved."
+    	flash[:error] = "post data was NOT saved."
     	render :new
 		end
 	end
 
 	def destroy
-		@Discover = Discover.find params[:id]
-		@Discover.destroy
+		@post = Post.find params[:id]
+		@post.destroy
 		redirect_to user_path
 	end
 
 private
-	def Discover_params
-		params.require(:Discover).permit(
+	def post_params
+		params.require(:post).permit(
 			:content
 			)
 	end
