@@ -27,3 +27,4 @@ running:
 - [ ] user can post video clip by link (not uploading)
 - [ ] user can up-vote a post
 - [ ] anyone can view popular posts (sort by up-votes)
+
