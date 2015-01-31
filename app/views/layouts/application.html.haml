@@ -9,13 +9,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
+  -# Render the header
+  = render 'layouts/header'
+
   -# Add flash messages for Devise
   %p.notice= notice
   %p.alert= alert
   -# End of flash messages for Devise
-
-  -# Render the header
-  = render 'layouts/header'
 
   -# Render the body
   %body
