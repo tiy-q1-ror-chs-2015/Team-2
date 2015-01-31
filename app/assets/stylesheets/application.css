@@ -32,6 +32,18 @@ p {
     padding: 10px;
 }
 
+.top-bar-wrapper {
+    -moz-box-shadow: 0 0.5px whitesmoke;
+    -webkit-box-shadow: 0 0.5px whitesmoke;
+    box-shadow: 0 0.5px whitesmoke;
+}
+
+.top-bar {
+    max-width: 1280px;
+    /* padding: 0 20px 0 15px; */
+    margin: auto;
+}
+
 #wrapper {
     margin: 0 auto;
     width: 1000px;
