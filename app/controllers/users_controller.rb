@@ -6,8 +6,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @posts = @user.posts
+    # TODO: actually implement friends
+    @friends = []
+    12.times do
+      random_user = User.find(rand(100)+1)
+      @friends.push(random_user)
+    end
   end
-  
+
   def edit
     @user = User.find params[:id]
   end

@@ -30,7 +30,8 @@ namespace :db do
     puts 'Generating comments for posts'
     Post.all.each do |p|
       2.times do
-        new_comment = Comment.new( content: Faker::Lorem.paragraph)
+        random_user = User.find(rand(N)+1)
+        new_comment = random_user.comments.new( content: Faker::Lorem.paragraph )
         p.comments.push( new_comment )
       end
     end
