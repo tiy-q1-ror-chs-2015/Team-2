@@ -6,13 +6,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    @posts = @user.posts
-    # TODO: actually implement friends
-    @friends = []
-    12.times do
-      random_user = User.find(rand(100)+1)
-      @friends.push(random_user)
-    end
+    @subscriptions = @user.following_users
+    @subscribers = @user.user_followers
+    # we want posts from ourselves plus every user to whom we are
+    # subscribed
+    poster_ids = [params[:id]] + @subscriptions.map(&:id)
+    @posts = Post.where(user_id: poster_ids).order('created_at desc')
   end
 
   def edit

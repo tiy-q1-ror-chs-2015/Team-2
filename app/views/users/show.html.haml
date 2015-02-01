@@ -7,7 +7,7 @@
           = image_tag post.user.avatar.src
         .post-content
           %strong
-            = "#{@user.first_name} #{@user.last_name}:"
+            = "#{post.user.first_name} #{post.user.last_name}:"
           = post.content
           .post-links.text-right
             = link_to "Follow", root_path
@@ -22,12 +22,19 @@
   / This is source ordered to be pulled to the right on larger screens
   .friend-list.medium-4.columns
     %h4
-      = "Following Users:"
-    - @friends.each do |friend|
+      = "I am following:"
+    - @subscriptions.each do |following|
       .user-entry
         .avatar-sm.left
-          = image_tag friend.avatar.src
-        = " | #{friend.first_name} #{friend.last_name}"
+          = image_tag following.avatar.src
+        = " | #{following.first_name} #{following.last_name}"
+    %h4
+      = "Following me:"
+    - @subscribers.each do |following|
+      .user-entry
+        .avatar-sm.left
+          = image_tag following.avatar.src
+        = " | #{following.first_name} #{following.last_name}"
 
 / Footer
 %footer.row
