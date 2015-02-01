@@ -10,7 +10,7 @@
             = "#{post.user.first_name} #{post.user.last_name}:"
           = post.content
           .post-links.text-right
-            = link_to "Follow", root_path
+            = link_to "Follow", follow_user_user_path(@user, post.user), method: :post
             = link_to "Reply", root_path
           .comments
             - post.comments.each do |comment|
