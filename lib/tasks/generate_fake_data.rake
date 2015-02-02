@@ -22,7 +22,12 @@ namespace :db do
     puts 'Generating posts'
     User.all.each do |u|
       20.times do
-        new_post = Post.new( content: Faker::Lorem.paragraph )
+        post_time = rand(2.years).seconds.ago
+        new_post = Post.new(
+          content: Faker::Lorem.paragraph,
+          created_at: post_time,
+          updated_at: post_time
+        )
         u.posts.push( new_post )
       end
     end
@@ -30,8 +35,16 @@ namespace :db do
     puts 'Generating comments for posts'
     Post.all.each do |p|
       2.times do
-        new_comment = Comment.new( content: Faker::Lorem.paragraph)
+        random_user = User.find(rand(N)+1)
+        new_comment = random_user.comments.new( content: Faker::Lorem.paragraph )
         p.comments.push( new_comment )
+      end
+    end
+    # for each user, follow ~10 other users chosen at random
+    puts 'Creating user subscriptions'
+    User.all.each do |u|
+      10.times do
+        u.follow(User.find(rand(N)+1))
       end
     end
   end
