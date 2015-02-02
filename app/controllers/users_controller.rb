@@ -6,8 +6,22 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @subscriptions = @user.following_users
+    @subscribers = @user.user_followers
+    # we want posts from ourselves plus every user to whom we are
+    # subscribed
+    poster_ids = [params[:id]] + @subscriptions.map(&:id)
+    @posts = Post.where(user_id: poster_ids).order('created_at desc')
   end
-  
+
+  def follow
+    @follower = User.find params[:user_id]
+    @followed = User.find params[:id]
+    @follower.follow(@followed)
+    flash[:notice] = "Following #{@followed.first_name} #{@followed.last_name}"
+    redirect_to :back
+  end
+
   def edit
     @user = User.find params[:id]
   end

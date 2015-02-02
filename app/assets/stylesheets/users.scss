@@ -1,3 +1,45 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.page {
+  max-width: 1280px;
+  margin: auto;
+}
+  
+.post {
+  margin-bottom: 40px;
+}
+
+.post-badge img {
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  background: whitesmoke;
+  box-shadow: 1px 1px 4px #3749A6;
+}
+
+.post-content {
+  margin-left: 90px;
+  background: whitesmoke;
+  border-radius: 4px;
+  border: 1px #3749A6;
+  box-shadow: 1px 1px 4px #3749A6;
+  padding: 20px;
+  }
+
+.comments {
+  color: #999;
+  }
+
+.friend-list {
+  background: whitesmoke;
+  border-radius: 4px;
+  padding: 20px;
+}    
+.avatar-sm {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  }
