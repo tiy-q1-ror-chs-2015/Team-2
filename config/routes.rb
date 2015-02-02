@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   get 'discover' => 'discover#index'
   post 'discover_create_post' => 'discover#create_post'
+  get 'fun' => 'fun#index'
 
 
 

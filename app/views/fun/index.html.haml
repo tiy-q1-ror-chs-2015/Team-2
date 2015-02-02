@@ -1,0 +1,7 @@
+
+- @avatars.each do |a|
+  %div.avatar-fun
+    %strong Avatar
+    %a= a.user_id
+    %a= a.id
+    %img{:src => a.src}

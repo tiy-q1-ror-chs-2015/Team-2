@@ -17,7 +17,7 @@ running:
   is following
 - [ ] anyone can view recent public posts
 - [ ] anyone can view marketing page
-- [ ] (Robbi) user can create a new post 
+- [X](Robbi) user can create a new post 
 - [ ] user can add comment to any post
 - [ ] add a default avatar to new users (currently causes problems)
 - [ ] user can follow another user by clinking link on post
@@ -27,4 +27,5 @@ running:
 - [ ] user can post video clip by link (not uploading)
 - [ ] user can up-vote a post
 - [ ] anyone can view popular posts (sort by up-votes)
+- [ ] fubmlr needs to be fumblr
 
